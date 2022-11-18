@@ -1,0 +1,11 @@
+MATERIAL_HTML = 100
+MATERIAL_TEXT = 101
+MATERIAL_AUDIO = 300
+MATERIAL_VIMEO = 401
+
+MATERIAL_TYPES = [
+    (MATERIAL_HTML, 'HTML текст'),
+    (MATERIAL_TEXT, 'Текст'),
+    (MATERIAL_AUDIO, 'Аудио файл'),
+    (MATERIAL_VIMEO, 'Видео на Vimeo'),
+]

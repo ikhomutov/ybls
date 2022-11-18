@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load material_widgets %}
+
+{% block content %}
+<div class="container">
+  <h1>Урок {{ lesson.index }}: {{ lesson.name }}</h1>
+  {% for content in lesson.contents.all %}
+    <h2>{{ content.name }}</h2>
+    {% for material in content.materials.all %}
+      {% if material.type == 401 %}
+        {% vimeo_widget material.data.link %}
+      {% elif material.type == 300 %}
+        {% audio_widget material.data %}
+      {% elif material.type == 101 %}
+        <p>{{ material.data.text }}</p>
+      {% elif material.type == 100 %}
+        {{ material.data.text|safe }}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+{% endblock %} 

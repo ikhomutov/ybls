@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "ybls"
+version = "0.1.0"
+description = ""
+authors = ["Ivan Khomutov <i.khomutov@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "^4.1.3"
+django-environ = "^0.9.0"
+whitenoise = "^6.2.0"
+psycopg2-binary = "^2.9.5"
+beautifulsoup4 = "^4.11.1"
+requests = "^2.28.1"
+
+[tool.poetry.group.dev.dependencies]
+ipdb = "^0.13.9"
+flake8 = "^5.0.4"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.0"
+pytest-django = "^4.5.2"
+pytest-cov = "^4.0.0"
+pytest-faker = "^2.0.0"
+pytest-mock = "^3.10.0"
+factory-boy = "^3.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

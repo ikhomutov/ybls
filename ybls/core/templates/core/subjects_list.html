@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <ul class="list-group">
+    {% for subject in subjects %}
+      <li class="list-group-item"><a href="{% url 'core:subject-detail' level=level subject_id=subject.id %}">{{ subject.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

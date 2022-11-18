@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Development stuff:
+*.log
+db.sqlite3
+staticfiles/
+
+
+# Sphinx documentation
+docs/_build/
+
+# celery beat schedule file
+celerybeat-schedule
+
+# Environments
+venv/
+app.env
+compose.env
+
+# IDE
+.idea/
+.vscode/
