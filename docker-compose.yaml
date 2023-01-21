@@ -10,11 +10,13 @@ services:
       dockerfile: ./Dockerfile
     image: ybls_app
     ports:
-      - 8000:8000
+      - "10000:8000"
     depends_on:
       - postgres
     env_file:
       - compose.env
+    volumes:
+      - ./files/static:/app/staticfiles
 
   postgres:
     image: postgres:15.1-alpine
@@ -23,6 +25,7 @@ services:
       POSTGRES_PASSWORD: ybls
       POSTGRES_DB: ybls
     ports:
-      - 9990:5432
+      - "9990:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./backups:/backups
