@@ -1,0 +1,28 @@
+version: '3'
+
+volumes:
+  postgres_data: {}
+
+services:
+  application:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: ybls_app
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+    env_file:
+      - compose.env
+
+  postgres:
+    image: postgres:15.1-alpine
+    environment:
+      POSTGRES_USER: ybls
+      POSTGRES_PASSWORD: ybls
+      POSTGRES_DB: ybls
+    ports:
+      - 9990:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
